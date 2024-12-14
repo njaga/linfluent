@@ -31,7 +31,7 @@ const Hero = () => {
               transition={{ delay: 0.3, duration: 0.8 }}
             >
               <span className="inline-block px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm text-white/90 text-sm font-medium mb-6">
-                Agence Digitale au Sénégal 🚀
+                Agence l'influent🚀
               </span>
               <h1 className="text-6xl md:text-7xl font-bold text-white leading-tight mb-6">
                 Transformez votre{" "}
@@ -63,7 +63,7 @@ const Hero = () => {
               className="flex flex-col sm:flex-row items-center gap-6 justify-center lg:justify-start"
             >
               <Link
-                to="/contact"
+                to="/devis"
                 className="group flex items-center px-8 py-4 text-lg font-medium rounded-full bg-white text-[#00adef] hover:shadow-lg hover:shadow-white/20 transform hover:-translate-y-1 transition-all duration-300"
               >
                 Démarrer un projet

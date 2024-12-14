@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, Twitter, Facebook, Instagram, Linkedin } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -20,41 +20,78 @@ const Navbar = () => {
           </div>
           
           <div className="hidden md:flex items-center space-x-8">
-            <Link to="/a-propos" className="text-gray-700 hover:text-[#00adef]">À propos</Link>
-            <Link to="/services" className="text-gray-700 hover:text-[#00adef]">Services</Link>
-            <Link to="/realisations" className="text-gray-700 hover:text-[#00adef]">Réalisations</Link>
-            <Link to="/contact" className="text-gray-700 hover:text-[#00adef]">Contact</Link>
-            <div className="flex space-x-4">
-              <a href="https://twitter.com/l_influent" className="text-gray-500 hover:text-[#00adef]">
-                <Twitter size={20} />
-              </a>
-              <a href="https://web.facebook.com/linfluentsn" className="text-gray-500 hover:text-[#00adef]">
-                <Facebook size={20} />
-              </a>
-              <a href="https://www.instagram.com/linfluentsn/" className="text-gray-500 hover:text-[#00adef]">
-                <Instagram size={20} />
-              </a>
-              <a href="https://www.linkedin.com/company/l-influent" className="text-gray-500 hover:text-[#00adef]">
-                <Linkedin size={20} />
-              </a>
-            </div>
+            <Link to="/a-propos" className="text-gray-700 hover:text-[#5659a8]">À propos</Link>
+            <Link to="/services" className="text-gray-700 hover:text-[#5659a8]">Services</Link>
+            <Link to="/realisations" className="text-gray-700 hover:text-[#5659a8]">Réalisations</Link>
+            <Link to="/blog" className="text-gray-700 hover:text-[#5659a8]">Blog</Link>
+            <Link to="/contact" className="text-gray-700 hover:text-[#5659a8]">Contact</Link>
+            <Link 
+              to="/devis" 
+              className="px-4 py-2 bg-gradient-to-r from-[#5659a8] to-[#01adef] text-white rounded-lg hover:opacity-90 transition-opacity"
+            >
+              Devis gratuit
+            </Link>
           </div>
 
           <div className="md:hidden flex items-center">
-            <button onClick={() => setIsOpen(!isOpen)} className="text-gray-700">
+            <button 
+              onClick={() => setIsOpen(!isOpen)} 
+              className="text-gray-700 z-50 relative"
+            >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
         </div>
       </div>
 
+      {/* Menu mobile avec overlay */}
       {isOpen && (
-        <div className="md:hidden">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <Link to="/a-propos" className="block px-3 py-2 text-gray-700 hover:text-[#00adef]">À propos</Link>
-            <Link to="/services" className="block px-3 py-2 text-gray-700 hover:text-[#00adef]">Services</Link>
-            <Link to="/realisations" className="block px-3 py-2 text-gray-700 hover:text-[#00adef]">Réalisations</Link>
-            <Link to="/contact" className="block px-3 py-2 text-gray-700 hover:text-[#00adef]">Contact</Link>
+        <div className="fixed inset-0 bg-black bg-opacity-50 z-40">
+          <div className="fixed inset-y-0 right-0 w-full bg-white transform transition-transform duration-300 ease-in-out">
+            <div className="flex flex-col h-full justify-center items-center space-y-8 text-center">
+              <Link 
+                to="/a-propos" 
+                onClick={() => setIsOpen(false)}
+                className="text-2xl text-gray-700 hover:text-[#5659a8]"
+              >
+                À propos
+              </Link>
+              <Link 
+                to="/services" 
+                onClick={() => setIsOpen(false)}
+                className="text-2xl text-gray-700 hover:text-[#5659a8]"
+              >
+                Services
+              </Link>
+              <Link 
+                to="/realisations" 
+                onClick={() => setIsOpen(false)}
+                className="text-2xl text-gray-700 hover:text-[#5659a8]"
+              >
+                Réalisations
+              </Link>
+              <Link 
+                to="/blog" 
+                onClick={() => setIsOpen(false)}
+                className="text-2xl text-gray-700 hover:text-[#5659a8]"
+              >
+                Blog
+              </Link>
+              <Link 
+                to="/contact" 
+                onClick={() => setIsOpen(false)}
+                className="text-2xl text-gray-700 hover:text-[#5659a8]"
+              >
+                Contact
+              </Link>
+              <Link 
+                to="/devis" 
+                onClick={() => setIsOpen(false)}
+                className="px-6 py-3 bg-gradient-to-r from-[#5659a8] to-[#01adef] text-white text-xl rounded-lg hover:opacity-90 transition-opacity"
+              >
+                Devis gratuit
+              </Link>
+            </div>
           </div>
         </div>
       )}
