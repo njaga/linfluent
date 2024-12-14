@@ -83,13 +83,13 @@ const Services = () => {
             whileInView="animate"
             viewport={{ once: true }}
             variants={staggerContainer}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12"
           >
             {[
               {
                 icon: Globe,
                 title: "Conception de Sites Web",
-                description: "Création de sites web modernes, responsifs et optimisés pour convertir vos visiteurs en clients",
+                description: "Sites web professionnels et applications sur mesure avec les dernières technologies",
                 features: [
                   "Sites vitrines professionnels",
                   "E-commerce performants",
@@ -100,7 +100,7 @@ const Services = () => {
               {
                 icon: Smartphone,
                 title: "Développement d'Applications",
-                description: "Applications mobiles et logiciels personnalisés pour digitaliser vos processus",
+                description: "Applications iOS et Android performantes et intuitives pour votre entreprise",
                 features: [
                   "Applications iOS et Android",
                   "Solutions métier",
@@ -114,7 +114,7 @@ const Services = () => {
                 description: "Stratégies marketing complètes pour augmenter votre visibilité en ligne",
                 features: [
                   "SEO & SEA",
-                  "Réseaux sociaux",
+                  "Réseaux sociaux", 
                   "Email marketing",
                   "Content marketing"
                 ]
@@ -131,28 +131,6 @@ const Services = () => {
                 ]
               },
               {
-                icon: Rocket,
-                title: "Analyse et Optimisation",
-                description: "Amélioration continue de vos performances digitales",
-                features: [
-                  "Analyse de données",
-                  "Tests d'utilisabilité",
-                  "Optimisation conversion",
-                  "Rapports détaillés"
-                ]
-              },
-              {
-                icon: GraduationCap,
-                title: "Formation et Consultation",
-                description: "Accompagnement personnalisé pour votre transformation digitale",
-                features: [
-                  "Audit digital",
-                  "Formation équipes",
-                  "Conseil stratégique",
-                  "Support technique"
-                ]
-              },
-              {
                 icon: Database,
                 title: "Gestion de Bases de Données",
                 description: "Solutions complètes de gestion et d'optimisation de bases de données",
@@ -164,7 +142,7 @@ const Services = () => {
                 ]
               },
               {
-                icon: LineChart, 
+                icon: LineChart,
                 title: "Analyse de Données",
                 description: "Exploitation et analyse approfondie de vos données pour des décisions éclairées",
                 features: [
@@ -178,72 +156,38 @@ const Services = () => {
               <motion.div
                 key={index}
                 variants={fadeInUp}
-                className="relative group"
+                whileHover={{ y: -10 }}
+                className="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300"
               >
-                {/* Card avec effet de profondeur */}
-                <div className="relative z-10 h-full bg-white rounded-2xl p-8 shadow-sm 
-                              transition-all duration-300 
-                              hover:shadow-xl hover:-translate-y-1">
-                  {/* En-tête avec icône */}
-                  <div className="flex items-start space-x-4">
-                    <div className="flex-shrink-0">
-                      <div className="relative">
-                        <div className="absolute inset-0 bg-gradient-to-r from-[#00adef] to-[#5659a8] rounded-xl blur opacity-40 
-                                      group-hover:opacity-60 transition-opacity" />
-                        <div className="relative bg-gradient-to-r from-[#00adef] to-[#5659a8] p-4 rounded-xl">
-                          <service.icon className="w-6 h-6 text-white" />
-                        </div>
-                      </div>
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-bold text-gray-900 mb-2 
-                                   group-hover:text-[#00adef] transition-colors">
-                        {service.title}
-                      </h3>
-                      <p className="text-gray-600 text-sm leading-relaxed">
-                        {service.description}
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Ligne de séparation avec gradient */}
-                  <div className="my-6 h-px bg-gradient-to-r from-[#00adef]/20 via-[#5659a8]/20 to-transparent" />
-
-                  {/* Liste des fonctionnalités */}
-                  <ul className="space-y-3">
-                    {service.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-center space-x-3">
-                        <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-[#00adef] to-[#5659a8]" />
-                        <span className="text-sm text-gray-600">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  {/* CTA */}
-                  <div className="mt-8">
-                    <Link
-                      to="/contact"
-                      className="inline-flex items-center text-sm font-medium 
-                               text-[#00adef] hover:text-[#5659a8] transition-colors group/link"
-                    >
-                      <span className="relative">
-                        En savoir plus
-                        <span className="absolute -bottom-1 left-0 w-full h-0.5 
-                                       bg-gradient-to-r from-[#00adef] to-[#5659a8] 
-                                       origin-left scale-x-0 
-                                       group-hover/link:scale-x-100 transition-transform" />
-                      </span>
-                      <ArrowRight className="ml-2 h-4 w-4 
-                                          group-hover/link:translate-x-1 transition-transform" />
-                    </Link>
-                  </div>
+                <div className="w-16 h-16 mb-8 rounded-2xl bg-gradient-to-r from-[#00adef] to-[#5659a8] p-4 relative">
+                  <service.icon className="w-full h-full text-white" />
+                  <div className="absolute -bottom-2 -right-2 w-16 h-16 rounded-2xl bg-[#00adef] opacity-20 -z-10 transform rotate-6" />
                 </div>
+                
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                  {service.title}
+                </h3>
+                
+                <p className="text-gray-600 mb-6">
+                  {service.description}
+                </p>
+                
+                <ul className="space-y-3 mb-8">
+                  {service.features.map((feature, idx) => (
+                    <li key={idx} className="flex items-center text-gray-600">
+                      <div className="w-1.5 h-1.5 rounded-full bg-[#00adef] mr-3" />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
 
-                {/* Effet de fond */}
-                <div className="absolute inset-0 bg-gradient-to-r from-[#00adef]/5 to-[#5659a8]/5 
-                              rounded-2xl -rotate-2 scale-[0.98] 
-                              group-hover:scale-100 group-hover:rotate-0 
-                              transition-all duration-300" />
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center text-[#00adef] hover:text-[#5659a8] transition-colors group"
+                >
+                  <span className="font-medium">En savoir plus</span>
+                  <ArrowRight className="ml-2 h-5 w-5 transform group-hover:translate-x-1 transition-transform" />
+                </Link>
               </motion.div>
             ))}
           </motion.div>
