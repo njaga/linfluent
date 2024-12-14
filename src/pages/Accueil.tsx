@@ -81,7 +81,7 @@ const Accueil = () => {
       <Hero />
 
       {/* Section Services */}
-      <section className="py-32 bg-gray-50">
+      <section className="pb-16 pt-32 bg-gray-50">
         <motion.div 
           className="max-w-6xl mx-auto px-4"
           initial="initial"
@@ -158,7 +158,7 @@ const Accueil = () => {
       </section>
 
       {/* Section Valeurs */}
-      <section className="py-32 bg-gray-50">
+      <section className="py-24 bg-gray-50">
         <motion.div 
           className="max-w-6xl mx-auto px-4"
           initial="initial"
