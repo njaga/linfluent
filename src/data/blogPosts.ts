@@ -62,7 +62,7 @@ export const blogPosts: Record<string, BlogPost> = {
     readTime: "5 min",
     author: {
       name: "Ndiaga Ndiaye",
-      avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+      avatar: "/images/team/ndiaga-ndiaye.jpg",
       role: "Digital Manager"
     },
     tags: ["Web Development", "JavaScript", "React", "Performance"]
@@ -101,7 +101,7 @@ export const blogPosts: Record<string, BlogPost> = {
     readTime: "4 min",
     author: {
       name: "Ndiaga Ndiaye",
-      avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+      avatar: "/images/team/ndiaga-ndiaye.jpg",
       role: "Digital Manager"
     },
     tags: ["Marketing Digital", "IA", "Innovation", "Stratégie"]
@@ -140,7 +140,7 @@ export const blogPosts: Record<string, BlogPost> = {
     readTime: "6 min",
     author: {
       name: "Ndiaga Ndiaye",
-      avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+      avatar: "/images/team/ndiaga-ndiaye.jpg",
       role: "Digital Manager"
     },
     tags: ["Design", "UX", "UI", "Design System"]
@@ -179,7 +179,7 @@ export const blogPosts: Record<string, BlogPost> = {
     readTime: "4 min",
     author: {
       name: "Ndiaga Ndiaye",
-      avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+      avatar: "/images/team/ndiaga-ndiaye.jpg",
       role: "Digital Manager"
     },
     tags: ["SEO", "Marketing Digital", "Stratégie", "Visibilité"]
@@ -218,7 +218,7 @@ export const blogPosts: Record<string, BlogPost> = {
     readTime: "5 min",
     author: {
       name: "Ndiaga Ndiaye",
-      avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+      avatar: "/images/team/ndiaga-ndiaye.jpg",
       role: "Digital Manager"
     },
     tags: ["UX", "UI", "Design", "Mobile"]
@@ -257,7 +257,7 @@ export const blogPosts: Record<string, BlogPost> = {
     readTime: "6 min",
     author: {
       name: "Ndiaga Ndiaye",
-      avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+      avatar: "/images/team/ndiaga-ndiaye.jpg",
       role: "Digital Manager"
     },
     tags: ["Transformation Digitale", "Innovation", "Stratégie", "Management"]

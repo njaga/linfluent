@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import Hero from '../components/Hero';
 import { Link } from 'react-router-dom';
 import { SiReact, SiNodedotjs, SiLaravel, SiWordpress, SiFlutter, SiAmazon, SiFirebase, SiMongodb } from 'react-icons/si';
+import { blogPosts } from '../data/blogPosts';
 
 const fadeInUp = {
   initial: { y: 60, opacity: 0 },
@@ -410,51 +411,65 @@ const Accueil = () => {
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                titre: "Les tendances du web design en 2024",
-                sousTitre: "Design & UX",
-                description: "Découvrez les dernières tendances en matière de design web et comment elles peuvent améliorer votre visibilité en ligne.",
-                date: "15 Mars 2024",
-                image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-              },
-              {
-                titre: "Comment optimiser son SEO en 2024",
-                sousTitre: "Référencement",
-                description: "Découvrez les meilleures pratiques pour optimiser votre site web et augmenter votre visibilité sur les moteurs de recherche.",
-                date: "10 Mars 2024",
-                image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-              },
-              {
-                titre: "L'importance de l'UX dans le e-commerce",
-                sousTitre: "E-commerce",
-                description: "Découvrez comment l'expérience utilisateur (UX) peut améliorer les ventes et la satisfaction des clients dans le secteur e-commerce.",
-                date: "5 Mars 2024",
-                image: "https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-              }
-            ].map((article, index) => (
-              <motion.div
-                key={index}
-                variants={fadeInUp}
-                className="group cursor-pointer"
-              >
-                <div className="relative h-48 rounded-2xl overflow-hidden mb-4">
-                  <img
-                    src={article.image}
-                    alt={article.titre}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                </div>
-                <span className="text-sm font-medium text-[#00adef]">{article.sousTitre}</span>
-                <h3 className="text-xl font-semibold text-gray-900 mt-2 mb-2 group-hover:text-[#00adef] transition-colors">
-                  {article.titre}
-                </h3>
-                <p className="text-gray-600 text-sm mb-3 line-clamp-2">
-                  {article.description}
-                </p>
-                <p className="text-sm text-gray-500">{article.date}</p>
-              </motion.div>
-            ))}
+            {Object.values(blogPosts)
+              .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+              .slice(0, 3)
+              .map((article) => (
+                <Link 
+                  key={`post-${article.id}`}
+                  to={`/blog/${article.id}`} 
+                  className="group"
+                >
+                  <motion.article
+                    variants={fadeInUp}
+                    className="bg-white rounded-2xl shadow-sm overflow-hidden
+                             hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                  >
+                    <div className="relative h-56 overflow-hidden">
+                      <img
+                        src={article.image}
+                        alt={article.title}
+                        className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    </div>
+
+                    <div className="p-8">
+                      <div className="flex items-center space-x-3 mb-4">
+                        <span className="px-4 py-1.5 text-xs font-medium text-[#00adef] bg-blue-50 rounded-full">
+                          {article.category}
+                        </span>
+                        <span className="text-sm text-gray-500">{article.date}</span>
+                      </div>
+
+                      <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#00adef] transition-colors">
+                        {article.title}
+                      </h3>
+                      <p className="text-gray-600 mb-6 line-clamp-2">
+                        {article.excerpt}
+                      </p>
+
+                      <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+                        <div className="flex items-center space-x-3">
+                          <img
+                            src={article.author.avatar}
+                            alt=""
+                            className="w-10 h-10 rounded-full border-2 border-white shadow-sm"
+                          />
+                          <span className="text-sm font-medium text-gray-700">
+                            {article.author.name}
+                          </span>
+                        </div>
+
+                        <div className="text-[#00adef] group/btn inline-flex items-center text-sm font-medium">
+                          Lire plus
+                          <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
+                        </div>
+                      </div>
+                    </div>
+                  </motion.article>
+                </Link>
+              ))}
           </div>
 
           <motion.div 

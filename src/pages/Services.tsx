@@ -36,7 +36,7 @@ const staggerContainer = {
 const Services = () => {
   return (
     <div className="overflow-hidden">
-      {/* Hero Section avec design moderne */}
+      {/* Hero Section */}
       <div className="relative min-h-[60vh] flex items-center bg-gradient-to-r from-[#00adef] to-[#5659a8] overflow-hidden">
         {/* Motif de fond */}
         <div className="absolute inset-0 bg-grid-white/[0.05]" />
@@ -75,7 +75,7 @@ const Services = () => {
         </div>
       </div>
 
-      {/* Services avec nouveau design */}
+      {/* Services Principaux */}
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -194,8 +194,62 @@ const Services = () => {
         </div>
       </section>
 
+      {/* Expertise en Données */}
+      <section className="py-24 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div className="text-center mb-16">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              Expertise en Données
+            </h2>
+            <p className="text-lg text-gray-600">
+              Solutions avancées pour l'analyse et la gestion de vos données
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <motion.div className="bg-white p-8 rounded-2xl shadow-sm">
+              <PieChart className="w-12 h-12 text-[#00adef] mb-6" />
+              <h3 className="text-xl font-bold mb-4">Analyse de Données</h3>
+              <ul className="space-y-3">
+                <li className="flex items-center space-x-3">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#00adef]" />
+                  <span>Analyse prédictive et Machine Learning</span>
+                </li>
+                <li className="flex items-center space-x-3">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#00adef]" />
+                  <span>Visualisation de données interactive</span>
+                </li>
+                <li className="flex items-center space-x-3">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#00adef]" />
+                  <span>KPIs et métriques personnalisées</span>
+                </li>
+              </ul>
+            </motion.div>
+
+            <motion.div className="bg-white p-8 rounded-2xl shadow-sm">
+              <Table className="w-12 h-12 text-[#00adef] mb-6" />
+              <h3 className="text-xl font-bold mb-4">Gestion de Bases de Données</h3>
+              <ul className="space-y-3">
+                <li className="flex items-center space-x-3">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#00adef]" />
+                  <span>Conception et modélisation</span>
+                </li>
+                <li className="flex items-center space-x-3">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#00adef]" />
+                  <span>Administration et maintenance</span>
+                </li>
+                <li className="flex items-center space-x-3">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#00adef]" />
+                  <span>Sécurité et sauvegarde</span>
+                </li>
+              </ul>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Secteurs d'Intervention */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="initial"
@@ -247,8 +301,8 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Réductions Spéciales */}
-      <section className="py-20">
+      {/* Offres Spéciales */}
+      <section className="py-20 bg-gray-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="initial"
@@ -309,7 +363,7 @@ const Services = () => {
       </section>
 
       {/* Modalités de Paiement */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="initial"
@@ -401,60 +455,6 @@ const Services = () => {
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
           </motion.div>
-        </div>
-      </section>
-
-      {/* Nouvelle section spécialisée */}
-      <section className="py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Expertise en Données
-            </h2>
-            <p className="text-lg text-gray-600">
-              Solutions avancées pour l'analyse et la gestion de vos données
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <motion.div className="bg-white p-8 rounded-2xl shadow-sm">
-              <PieChart className="w-12 h-12 text-[#00adef] mb-6" />
-              <h3 className="text-xl font-bold mb-4">Analyse de Données</h3>
-              <ul className="space-y-3">
-                <li className="flex items-center space-x-3">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#00adef]" />
-                  <span>Analyse prédictive et Machine Learning</span>
-                </li>
-                <li className="flex items-center space-x-3">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#00adef]" />
-                  <span>Visualisation de données interactive</span>
-                </li>
-                <li className="flex items-center space-x-3">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#00adef]" />
-                  <span>KPIs et métriques personnalisées</span>
-                </li>
-              </ul>
-            </motion.div>
-
-            <motion.div className="bg-white p-8 rounded-2xl shadow-sm">
-              <Table className="w-12 h-12 text-[#00adef] mb-6" />
-              <h3 className="text-xl font-bold mb-4">Gestion de Bases de Données</h3>
-              <ul className="space-y-3">
-                <li className="flex items-center space-x-3">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#00adef]" />
-                  <span>Conception et modélisation</span>
-                </li>
-                <li className="flex items-center space-x-3">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#00adef]" />
-                  <span>Administration et maintenance</span>
-                </li>
-                <li className="flex items-center space-x-3">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#00adef]" />
-                  <span>Sécurité et sauvegarde</span>
-                </li>
-              </ul>
-            </motion.div>
-          </div>
         </div>
       </section>
     </div>
